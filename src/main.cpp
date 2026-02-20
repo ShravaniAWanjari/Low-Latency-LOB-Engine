@@ -1,12 +1,13 @@
 #include "order.hpp"
 #include <iostream>
+#include  "order_book.cpp"
 
 int main() {
-    Order o1(1, 100.5, 10, Side::Buy);
+    OrderBook book;
 
-    std::cout << "Order ID: " << o1.id << "\n";
-    std::cout << "Price: " << o1.price << "\n";
-    std::cout << "Quantity: " << o1.quantity << "\n";
+    book.addOrder(Order(1, 100, 50, Side::Sell));
+    book.addOrder(Order(2, 99, 40, Side::Sell));
+    book.addOrder(Order(3, 101, 60, Side::Buy));
 
     return 0;
 }
